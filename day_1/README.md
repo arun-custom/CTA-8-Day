@@ -91,3 +91,81 @@ function Student(name, course) {
 Student.prototype = new Person;
 Student.prototype.constructor = Student;
 ```
+
+##.hasOwnProperty()
+- This is a methods for checking if a property is available on an object.
+- The syntax must be written in quotes.
+- Let's take a look at an example:
+
+```
+var cake = {
+	food: "cake"
+}
+
+cake.hasOwnProperty("food"); // returns true
+```
+
+- Let's do a slightly more complex example involving inheritance:
+
+```
+function Person(name) {
+	this.name = name;
+}
+
+Person.prototype.greet = function() {
+	return "Hello, my name is " + this.name;
+};
+
+function Student(name, course) {
+	this.name = name;
+	this.course = course;
+};
+
+Student.prototype = new Person
+Student.prototype.constructor = Student;
+
+p = new Person("bob");
+s = new Student("tom");
+
+p.hasOwnProperty("name"); //returns true
+s.hasOwnProperty("course"); //returns true
+s.hasOwnProperty("name"); //returns true
+```
+
+##instanceof
+- This is a common method that allows us to check if a specific object is an instance of a class.
+
+Basic example:
+
+```
+var color = "Green";
+
+color instanceof String; //returns true
+```
+
+Example with inheritance:
+
+```
+function Person(name) {
+	this.name = name;
+}
+
+Person.prototype.greet = function() {
+	return "Hello, my name is " + this.name;
+};
+
+function Student(name, course) {
+	this.name = name;
+	this.course = course;
+};
+
+Student.prototype = new Person
+Student.prototype.constructor = Student;
+
+p = new Person("bob")
+s = new Student("tom")
+
+s instanceof Person //returns true
+p instanceof Student //returns false
+Person instanceof Object //returns true
+```
