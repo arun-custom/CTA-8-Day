@@ -169,3 +169,18 @@ s instanceof Person //returns true
 p instanceof Student //returns false
 Person instanceof Object //returns true
 ```
+
+##In-Class Lab: A Basic "ORM" for AJAX
+- For this exercise we will be using the wine API located here: `http://daretodiscover.herokuapp.com/wines`.
+- We will be building an app using constructors and prototypes that will perform the full CRUD operations on wine objects using jQuery AJAX.
+- Here are the endpoints for reference:
+	- `GET /wines` -> Get all wines
+	- `POST /wines` -> Create a new wine
+	- `PUT /wines/:id` -> Update a wine
+	- `DELETE /wines/:id` -> Delete a wine
+- Steps:
+	1. Create a constructor function that will take and set parameters for each of the listed attributes.
+	2. Create a `save` prototype function that will take a wine object and create a POST request to the proper URL.
+	3. Create two prototype functions - `findAll` and `find` that will perform `GET` requests to the proper URLs.
+	4. Create an `update` prototype function that will take a wine object and create a PUT request to the proper URL.
+	5. Create a `delete` prototype function that will perform a DELETE request to the proper URL. 
