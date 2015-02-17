@@ -16,7 +16,7 @@ function Wine(wineData) {
 	return this;
 }
 
-Wine.prototype.save = function(done) {
+Wine.prototype.save = function(wineData, done) {
 	var wineData = {
 		name: this.name,
 		year: this.year,
@@ -117,6 +117,7 @@ $(document).on("click", "#save-wine", function() {
 		description: "This is some good wine!",
 		picture: "http://www.hinsdalecellars.com/images/Assorted%20Wines%202.jpg"
 	});
+	
 	newWine.save();
 });
 
