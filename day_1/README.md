@@ -267,6 +267,27 @@ $("#some-div").html(template_html);
 - Use Handlebars to create a simple template for each JSON object returned.
 
 ##Callback Functions
+- Callbacks allow you to execute functions after a certain action has been completed.
+- This is a core piece of functionality in many libraries including jQuery.
+- Often you will see callback structures where you have asynchronous code being executed such as AJAX.
+- Let's see an example:
+
+```
+function getUsers(done) {
+	$.ajax({
+		type: "GET",
+		url: endpointBase,
+		success: function(data) {
+			console.log(data);
+			done(data);
+		}		
+	});
+}
+
+getUsers(function(users) {
+	console.log(users);
+});
+```
 
 ##In-Class Lab: Adding Views to the Wine Manager
 - We will complete our wine application by adding views to it with Handlebars.
