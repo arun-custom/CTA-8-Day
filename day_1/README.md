@@ -92,6 +92,14 @@ Student.prototype = new Person;
 Student.prototype.constructor = Student;
 ```
 
+##Inheritance Exercise
+- Create a constructor function that will construct a plant object with country and isOrganic properties.
+- Develop two prototype methods on Plant - showNameandColor and amIOrganic.
+- Write a constructor function for a fruit that will contain name and color properties.
+- Set the fruit prototype as an instance of a plant.
+- Reset the fruit constructor.
+- Try calling the showNameandColor as well as the amIOrganic functions on a new instance of a fruit.
+
 ##.hasOwnProperty()
 - This is a methods for checking if a property is available on an object.
 - The syntax must be written in quotes.
