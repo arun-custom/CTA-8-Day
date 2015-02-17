@@ -3,4 +3,5 @@
 ###Day 1:
 - Introduction to JavaScript prototypes
 - Restructuring code using prototypes
-- Modular file structure using Browserify
+- Callback functions
+- Creating a MVC pattern from scratch

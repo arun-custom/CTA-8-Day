@@ -162,12 +162,26 @@ function Student(name, course) {
 Student.prototype = new Person
 Student.prototype.constructor = Student;
 
-p = new Person("bob")
-s = new Student("tom")
+p = new Person("bob");
+s = new Student("tom");
 
 s instanceof Person //returns true
 p instanceof Student //returns false
 Person instanceof Object //returns true
+```
+
+####AJAX Refresher
+- For today's lesson we will be using jQuery to handle the AJAX calls.
+- AJAX is a way to send and receive data from the server asynchronously from the page load.
+- The syntax for jQuery AJAX is as follows:
+
+```
+$.ajax({
+	url: "YOUR ENDPOINT HERE",
+	type: "GET",
+	success: function(data) { },
+	error: function(jqXHR, textStatus, errorThrown) { }
+});
 ```
 
 ##In-Class Lab: A Basic "ORM" for AJAX
@@ -183,4 +197,83 @@ Person instanceof Object //returns true
 	2. Create a `save` prototype function that will take a wine object and create a POST request to the proper URL.
 	3. Create two prototype functions - `findAll` and `find` that will perform `GET` requests to the proper URLs.
 	4. Create an `update` prototype function that will take a wine object and create a PUT request to the proper URL.
-	5. Create a `delete` prototype function that will perform a DELETE request to the proper URL. 
+	5. Create a `destroy` prototype function that will perform a DELETE request to the proper URL.
+	6. Test your methods with simple HTML buttons.
+
+##Front-End Templating with Handlebars
+- Generally it's not a good idea to put HTML code inside of JavaScript files.
+- Templating allows us to write the standard HTML syntax and convert blocks of code into dynamic templates that can be inserted anywhere on the page.
+- Handlebars is a library that offers us an easy to use syntax to handle templating.
+
+####How to Use Handlebars
+- Handlebars templates are handled through `<script>` tags, which allow them to be ignored while rendering the page:
+
+```
+<script id="my-template" type="text/x-handlebars-template">
+```
+
+- You can write any normal HTML here, but you can also write Handlebars-specific code:
+
+```
+<script id="my-template" type="text/x-handlebars-template">
+	<div class="entry">
+		<h1>{{title}}</h1>
+		<div class="body">
+			{{body}}
+		</div>
+	</div>
+</script>
+```
+
+- The curly code is essentially keys to a JSON object.
+- If you need to, you can also loop through an array of JSON objects to produce very dynamic templates. You will do this today. Here is an example from the docs on how this can be done through helpers:
+
+```
+<h1>Comments</h1>
+
+<div id="comments">
+	{{#each comments}}
+		<h2><a href="/posts/{{id}}">{{title}}</a></h2>
+		<div>{{body}}</div>
+	{{/each}}
+</div>
+```
+
+- This example assumes that `comments` is an array of JSON objects.
+
+- Before a template is used however, it must be first "compiled":
+
+```
+var source   = $("#my-template").html();
+var template = Handlebars.compile(source);
+```
+
+- The function `Handlebars.compile` returns a function that can be passed JSON data as an argument.
+- This resulting function returns HTML after the JSON data is processed into it.
+- You can then apply your template anywhere you need to:
+
+```
+var jsonData = {
+	title: "My New Post",
+	body: "This is my first post!"
+};
+
+var template_html = template(jsonData);
+$("#some-div").html(template_html);
+```
+
+##In-Class Lab: Testing Out Handlebars
+- Make a GET request out to `http://daretodiscover.net/users` to retrieve user data.
+- Use Handlebars to create a simple template for each JSON object returned.
+
+##Callback Functions
+
+##In-Class Lab: Adding Views to the Wine Manager
+- We will complete our wine application by adding views to it with Handlebars.
+- The view itself will be a constructor that is capable of rendering any view generically.
+- Here are the steps you will need to follow:
+	1. Create a view constructor to take in information about the view being rendered. Think about which attributes you may want to use here.
+	2. Apply a prototype function called "render" that will be responsible for taking the data from the constructor and rendering a template on the page.
+	3. Add a callback function to each of the prototype CRUD methods that will be performed when the AJAX is complete.
+	4. Add click events to each button appropriately to handle the various CRUD operations.
+- Note that all HTML and CSS is already done for you and can be found [here](wine_manager_html/).
