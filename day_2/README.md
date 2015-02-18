@@ -77,7 +77,7 @@
 
 ![The Absolute](img/the_absolute.png)
 
-#Advanced HTML5 and CSS3
+##Advanced HTML5 and CSS3
 - HTML5 is more than just tags and attributes.
 - HTML5 wraps in a rich JavaScript API that helps you push front-end work to the limit.
 
