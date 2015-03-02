@@ -136,7 +136,6 @@ function onFail(message) {
 	- `POST /members` -> Create a new member
 	- `PUT /members/:id` -> Update a member
 	- `DELETE /members/:id` -> Delete a member
-	- `POST /members/:id/photo` -> Upload a profile photo for a member
 - **Bonus:** Implement Angular animations to smoothly transition between pages.
 
 ##FileTransfer API
@@ -177,6 +176,8 @@ ft.upload(fileURL, encodeURI("url here"), success, error, options);
 - Let's take the social network app we just created and add a file transfer component to it.
 - When a user takes or selects a photo let's use the FileTransfer API to send the file to the server.
 - Make sure to submit this request on success of the add user method so you can pass along the user id.
+- Here is the endpoint you will need to access:
+	- `POST /members/:id/photo` -> Upload a profile photo for a member
 - **Bonus:** Check out the `onprogress` event that is triggered throughout the transfer. Try to implement a simple progress bar that updates with the status of the upload.
 
 ##Accessing Device Contacts
