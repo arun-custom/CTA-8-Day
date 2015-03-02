@@ -15,3 +15,11 @@
 - LocalStorage
 - SessionStorage
 - HTML5 canvas
+
+###[Day 3:](day_3/)
+- Install phonegap and the command-line tools
+- Create a new project
+- Adding and removing plugins
+- Camera API
+- Filetransfer API
+- Contact API
