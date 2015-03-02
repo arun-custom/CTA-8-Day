@@ -52,6 +52,17 @@ cordova create hello com.example.hello HelloWorld
 - Most of the major native functionality is wrapped into various plugins, such as accessing the camera or pulling from the GPS.
 - Let's take a look at the plugin registry to see what's available to use. It can be found [here](http://cordova.apache.org/docs/en/4.0.0/cordova_plugins_pluginapis.md.html).
 
+##deviceready
+- It is important to note that all of the Cordova plugins require the device to be ready before they can be accessed.
+- Cordova provides us an event called `deviceready` that signals to our application that we can safely call Cordova commands.
+- The syntax is exactly the same as any other event listener:
+
+```
+document.addEventListener("deviceready", function() {
+	//Device is ready and you can use Cordova
+});
+```
+
 ##Building Your App
 - Building the app is pretty trivial if you have all of the utilities set up.
 - There are a couple of command line tools to help us with this:
