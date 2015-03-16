@@ -29,3 +29,10 @@
 - Geolocation and working with maps
 - Deploying to the Google Play Store
 - Deploying to the iTunes Store
+
+###[Day 5:](day_5/)
+- Grid refresher
+- Bootstrap column system
+- CSS3 media queries
+- Bootstrap UI elements
+- Bootstrap jQuery plugins
