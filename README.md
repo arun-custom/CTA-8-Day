@@ -36,3 +36,10 @@
 - CSS3 media queries
 - Bootstrap UI elements
 - Bootstrap jQuery plugins
+
+###[Day 6:](day_6/)
+- CSS transitions
+- CSS transforms
+- Animation plugins
+- Keyframes
+- Lab time
